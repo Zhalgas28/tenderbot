@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tenderbot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
@@ -254,7 +255,7 @@
               </div>
             </div>
             <div class="new-header__buttons">
-              <button class="new-header__search">
+              <button class="new-header__search" data-bs-toggle="modal" data-bs-target="#searchModal">
                 <svg
                   width="24"
                   height="24"
@@ -296,12 +297,6 @@
                 </svg>
                 <span>Войти</span>
               </div>
-              <input
-                type="text"
-                class="new-header__search-input"
-                placeholder="Поиск по всем тендерным площадкам Казахстана"
-                style="display: none"
-              />
               <div class="new-header__blue-burger new-header__mobile">
                 <div class="new-header__line"></div>
                 <div class="new-header__line"></div>
@@ -320,7 +315,7 @@
             <img src="/images/new-header/logo2.svg" alt="Omarket" />
           </a>
         </div>
-        <button class="new-header__search">
+        <button class="new-header__search" data-bs-toggle="modal" data-bs-target="#searchModal">
           <svg
             width="24"
             height="24"
@@ -344,12 +339,6 @@
             />
           </svg>
         </button>
-        <input
-          type="text"
-          class="new-header__search-input"
-          placeholder="Поиск"
-          style="display: none"
-        />
       </div>
       <div class="new-header__phone-mobile">
         <a href="tel:+77470944215" class="new-header__phone-mobile-link"
@@ -372,32 +361,6 @@
             />
           </svg>
           <span>заказать звонок</span>
-        </div>
-      </div>
-      <div class="new-search-items" onclick="event.stopPropagation();">
-        <div class="new-header__container">
-          <div class="new-search-items__title">Искать:</div>
-          <div class="new-search-items__all">Везде</div>
-          <div class="new-search-items__item">
-            <input type="checkbox" name="where" />
-            <label>Госзакупки</label>
-          </div>
-          <div class="new-search-items__item">
-            <input type="checkbox" name="where" />
-            <label>Самрук Казына</label>
-          </div>
-          <div class="new-search-items__item">
-            <input type="checkbox" name="where" />
-            <label>Коммерческие тендеры</label>
-          </div>
-          <div class="new-search-items__item">
-            <input type="checkbox" name="where" />
-            <label>Закупки недропользователей</label>
-          </div>
-          <div class="new-search-items__item">
-            <input type="checkbox" name="where" />
-            <label>Тендеры с партнерскими предложениями</label>
-          </div>
         </div>
       </div>
       <div class="new-menu">
@@ -475,7 +438,7 @@
           </div>
           <span>Главная</span>
         </div>
-        <div class="nav-new__item">
+        <div class="nav-new__item" data-bs-toggle="modal" data-bs-target="#servicesModal">
           <div class="nav-new__icon">
             <svg
               width="25"
@@ -526,7 +489,7 @@
           </div>
           <span>Профиль</span>
         </div>
-        <div class="nav-new__item open-new-menu">
+        <div class="nav-new__item" data-bs-toggle="modal" data-bs-target="#menuModal">
           <div class="nav-new__icon">
             <svg
               width="25"
@@ -547,7 +510,7 @@
         </div>
       </div>
     </header>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <footer class="footer">
       <div class="footer__container">
         <div class="footer__logos">
@@ -560,17 +523,35 @@
         </div>
         <div class="footer__body">
           <div class="footer__left">
-            <div class="footer__copy">Copyright 2025 © TenderBot. Все права защищены.</div>
+            <div class="footer__copy">
+              Copyright 2025 © TenderBot. Все права защищены.
+            </div>
             <div class="footer__phone">
-              <a href="tel:+77470944215" class="footer__phone-link">+7 747 094 42 15</a>
+              <a href="tel:+77470944215" class="footer__phone-link"
+                >+7 747 094 42 15</a
+              >
               <div class="footer__phone-order">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.9996 10.9843V12.7908C14.0003 12.9585 13.9659 13.1245 13.8986 13.2781C13.8313 13.4318 13.7325 13.5697 13.6087 13.6831C13.4849 13.7965 13.3387 13.8828 13.1795 13.9365C13.0203 13.9903 12.8517 14.0102 12.6843 13.9951C10.8277 13.7938 9.04426 13.1606 7.47734 12.1465C6.01953 11.222 4.78356 9.98843 3.8572 8.53351C2.83752 6.96259 2.20294 5.17405 2.0049 3.31277C1.98982 3.14625 2.00965 2.97843 2.06312 2.81998C2.11659 2.66153 2.20254 2.51592 2.31548 2.39244C2.42843 2.26896 2.5659 2.1703 2.71915 2.10274C2.87239 2.03519 3.03805 2.00022 3.20558 2.00006H5.01565C5.30846 1.99718 5.59233 2.10067 5.81435 2.29122C6.03636 2.48178 6.18138 2.74641 6.22236 3.03578C6.29876 3.61389 6.44044 4.18152 6.64471 4.72785C6.72589 4.94338 6.74346 5.17761 6.69534 5.4028C6.64721 5.62799 6.53542 5.83469 6.3732 5.99841L5.60694 6.76315C6.46585 8.27069 7.71655 9.51891 9.22708 10.3761L9.99334 9.61138C10.1574 9.44948 10.3645 9.33791 10.5901 9.28988C10.8158 9.24185 11.0505 9.25939 11.2664 9.3404C11.8138 9.54427 12.3826 9.68567 12.9619 9.76192C13.2549 9.80318 13.5226 9.95052 13.714 10.1759C13.9053 10.4013 14.007 10.689 13.9996 10.9843Z" stroke="#078EE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.9996 10.9843V12.7908C14.0003 12.9585 13.9659 13.1245 13.8986 13.2781C13.8313 13.4318 13.7325 13.5697 13.6087 13.6831C13.4849 13.7965 13.3387 13.8828 13.1795 13.9365C13.0203 13.9903 12.8517 14.0102 12.6843 13.9951C10.8277 13.7938 9.04426 13.1606 7.47734 12.1465C6.01953 11.222 4.78356 9.98843 3.8572 8.53351C2.83752 6.96259 2.20294 5.17405 2.0049 3.31277C1.98982 3.14625 2.00965 2.97843 2.06312 2.81998C2.11659 2.66153 2.20254 2.51592 2.31548 2.39244C2.42843 2.26896 2.5659 2.1703 2.71915 2.10274C2.87239 2.03519 3.03805 2.00022 3.20558 2.00006H5.01565C5.30846 1.99718 5.59233 2.10067 5.81435 2.29122C6.03636 2.48178 6.18138 2.74641 6.22236 3.03578C6.29876 3.61389 6.44044 4.18152 6.64471 4.72785C6.72589 4.94338 6.74346 5.17761 6.69534 5.4028C6.64721 5.62799 6.53542 5.83469 6.3732 5.99841L5.60694 6.76315C6.46585 8.27069 7.71655 9.51891 9.22708 10.3761L9.99334 9.61138C10.1574 9.44948 10.3645 9.33791 10.5901 9.28988C10.8158 9.24185 11.0505 9.25939 11.2664 9.3404C11.8138 9.54427 12.3826 9.68567 12.9619 9.76192C13.2549 9.80318 13.5226 9.95052 13.714 10.1759C13.9053 10.4013 14.007 10.689 13.9996 10.9843Z"
+                    stroke="#078EE6"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
                 <span>заказать звонок</span>
               </div>
             </div>
-            <div class="footer__schedule">График поддержки: Пн-Пт: 9:00 — 20:00</div>
+            <div class="footer__schedule">
+              График поддержки: Пн-Пт: 9:00 — 20:00
+            </div>
           </div>
           <div class="footer-nav">
             <div class="footer-nav__title">БАЗА ТЕНДЕРОВ</div>
@@ -585,9 +566,7 @@
             <div class="footer-nav__items">
               <a class="footer-nav__item">Актуальные тарифы</a>
               <a class="footer-nav__item">Персональный отдел закупок</a>
-              <a class="footer-nav__item"
-                >Обучение и повышение квалификации</a
-              >
+              <a class="footer-nav__item">Обучение и повышение квалификации</a>
               <a class="footer-nav__item">Услуги нерезидентам</a>
               <a class="footer-nav__item">Аутсорсинг</a>
               <a class="footer-nav__item">Аналитика тендеров</a>
@@ -595,16 +574,14 @@
           </div>
           <div class="footer-nav">
             <div class="footer-nav__title">наши услуги</div>
-              <div class="footer-nav__items">
-                <a class="footer-nav__item">Аутсорсинг</a>
-                <a class="footer-nav__item">Помощь в участии в тендере</a>
-                <a class="footer-nav__item"
-                  >Поиск по гос. закупкам и тендерам</a
-                >
-                <a class="footer-nav__item">Обучение по тендерам</a>
-                <a class="footer-nav__item">Открытие ТОО/ИП в Казахстане</a>
-                <a class="footer-nav__item">Получение ЭЦП для нерезидентов</a>
-              </div>
+            <div class="footer-nav__items">
+              <a class="footer-nav__item">Аутсорсинг</a>
+              <a class="footer-nav__item">Помощь в участии в тендере</a>
+              <a class="footer-nav__item">Поиск по гос. закупкам и тендерам</a>
+              <a class="footer-nav__item">Обучение по тендерам</a>
+              <a class="footer-nav__item">Открытие ТОО/ИП в Казахстане</a>
+              <a class="footer-nav__item">Получение ЭЦП для нерезидентов</a>
+            </div>
           </div>
           <div class="footer-nav">
             <div class="footer-nav__title">о сервисе</div>
@@ -621,11 +598,142 @@
       </div>
     </footer>
 
+    <div class="modal fade" id="searchModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="searchModal" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="searchModal__search">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 24L20 20M15 22C18.866 22 22 18.866 22 15C22 11.134 18.866 8 15 8C11.134 8 8 11.134 8 15C8 18.866 11.134 22 15 22Z" stroke="#078EE6" stroke-width="1.88235" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <input type="text" placeholder="Поиск по всем тендерным площадкам Казахстана">
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 22L10 10.0011M10 21.9989L22 10" stroke="#787878" stroke-width="1.88235" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="servicesModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="servicesModal" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="servicesModal__top">
+              <div class="servicesModal__title">Услуги</div>
+              <div class="servicesModal__close" data-bs-dismiss="modal">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.0829 1.00759C13.4756 0.687152 14.0546 0.7099 14.4208 1.07595C14.7868 1.44195 14.8101 2.02107 14.4901 2.41384L14.4208 2.49001L9.161 7.74978L14.4208 13.0095C14.8113 13.4001 14.8113 14.0331 14.4208 14.4236C14.0302 14.814 13.3972 14.814 13.0067 14.4236L7.74694 9.16384L2.48815 14.4226C2.09762 14.8132 1.46461 14.8132 1.07408 14.4226C0.683678 14.0321 0.683599 13.399 1.07408 13.0086L6.33287 7.74978L1.07408 2.49099L1.00573 2.41481C0.685298 2.02209 0.708066 1.44309 1.07408 1.07692C1.44009 0.710921 2.01921 0.687549 2.41198 1.00759L2.48815 1.07692L7.74694 6.33571L13.0067 1.07595L13.0829 1.00759Z" fill="#4D4D4D" />
+                </svg>
+              </div>
+            </div>
+            <div class="servicesModal__items">
+              <a class="servicesModal__item">Аутсорсинг</a>
+              <a class="servicesModal__item">Помощь в участии в тендере</a>
+              <a class="servicesModal__item">Поиск по гос. закупкам и тендерам</a>
+              <a class="servicesModal__item">Обучение по тендерам</a>
+              <a class="servicesModal__item">Открытие ТОО/ИП в Казахстане</a>
+              <a class="servicesModal__item">Получение ЭЦП для нерезидентов</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="menuModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="menuModal" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="servicesModal__top">
+              <div class="servicesModal__title">Меню</div>
+              <div class="servicesModal__close" data-bs-dismiss="modal">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.0829 1.00759C13.4756 0.687152 14.0546 0.7099 14.4208 1.07595C14.7868 1.44195 14.8101 2.02107 14.4901 2.41384L14.4208 2.49001L9.161 7.74978L14.4208 13.0095C14.8113 13.4001 14.8113 14.0331 14.4208 14.4236C14.0302 14.814 13.3972 14.814 13.0067 14.4236L7.74694 9.16384L2.48815 14.4226C2.09762 14.8132 1.46461 14.8132 1.07408 14.4226C0.683678 14.0321 0.683599 13.399 1.07408 13.0086L6.33287 7.74978L1.07408 2.49099L1.00573 2.41481C0.685298 2.02209 0.708066 1.44309 1.07408 1.07692C1.44009 0.710921 2.01921 0.687549 2.41198 1.00759L2.48815 1.07692L7.74694 6.33571L13.0067 1.07595L13.0829 1.00759Z" fill="#4D4D4D" />
+                </svg>
+              </div>
+            </div>
+            <div class="servicesModal__items">
+              <div class="servicesModal-hover">
+                <div class="servicesModal-hover__title">
+                  <span>База тендеров</span>
+                  <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.6666 6.71338L8.33329 10.7134L3.99996 6.71338" stroke="#787878" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div class="servicesModal-hover__hidden">
+                  <div class="servicesModal-hover__items">
+                    <a class="servicesModal-hover__item">Актуальные тендеры</a>
+                    <a class="servicesModal-hover__item">Тендеры по предоплате</a>
+                    <a class="servicesModal-hover__item">Итоги тендеров</a>
+                  </div>
+                </div>
+              </div>
+              <div class="servicesModal-hover">
+                <div class="servicesModal-hover__title">
+                  <span>Тарифы</span>
+                  <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.6666 6.71338L8.33329 10.7134L3.99996 6.71338" stroke="#787878" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div class="servicesModal-hover__hidden">
+                  <div class="servicesModal-hover__items">
+                    <a class="servicesModal-hover__item">Тест</a>
+                    <a class="servicesModal-hover__item">Тест</a>
+                    <a class="servicesModal-hover__item">Тест</a>
+                  </div>
+                </div>
+              </div>
+              <div class="servicesModal-hover">
+                <div class="servicesModal-hover__title">
+                  <span>Обучение</span>
+                  <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.6666 6.71338L8.33329 10.7134L3.99996 6.71338" stroke="#787878" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div class="servicesModal-hover__hidden">
+                  <div class="servicesModal-hover__items">
+                    <a class="servicesModal-hover__item">Тест</a>
+                    <a class="servicesModal-hover__item">Тест</a>
+                    <a class="servicesModal-hover__item">Тест</a>
+                  </div>
+                </div>
+              </div>
+              <a class="servicesModal__item">Аналитика</a>
+              <a class="servicesModal__item">Контрагенты</a>
+              <a class="servicesModal__item">Блог</a>
+              <div class="servicesModal-hover">
+                <div class="servicesModal-hover__title">
+                  <span>Еще</span>
+                  <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.6666 6.71338L8.33329 10.7134L3.99996 6.71338" stroke="#787878" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div class="servicesModal-hover__hidden">
+                  <div class="servicesModal-hover__items">
+                    <a class="servicesModal-hover__item">Тест</a>
+                    <a class="servicesModal-hover__item">Тест</a>
+                    <a class="servicesModal-hover__item">Тест</a>
+                  </div>
+                </div>
+              </div>
+              <a class="servicesModal__item">Omarket Business</a>
+              <a class="servicesModal__item">Доставка Omarket</a>
+              <a class="servicesModal__item">Торговое финансирование</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="/app.js"></script>
   </body>
 </html>
